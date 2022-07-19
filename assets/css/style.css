@@ -11,6 +11,11 @@
     font-size: 1em;
 }
 
+
+.ds_none {
+    display: none !important;
+}
+
 .rounded {
     border-radius: 50%;
     -moz-border-radius: 50%;
@@ -239,6 +244,78 @@ a {
 }
 
 
+
+.navigation_mobile {
+    /* flex-basis: calc(100% - 330px); */
+    /*estou flexibilizando a tag nav para poder alocar os itens da ul no final da pagina a direita*/
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.navigation_mobile ul {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.navigation_mobile ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    position: relative;
+}
+
+.navigation_mobile_obj {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #236192;
+    border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+
+}
+
+
+.navigation_mobile_obj_active,
+.navigation_mobile_obj:hover {
+    background-color: white;
+}
+
+.navigation_mobile_sub {
+    /*para entender melhor como funciona a estilização do menu mobile, ele explica na aula
+    "criando menu mobile" no tempo 14m */
+    min-width: 200px;
+    background-color: white;
+    border-radius: 4px 0 4px 4px;
+    -moz-border-radius: 4px 0 4px 4px;
+    -webkit-border-radius: 4px 0 4px 4px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 100%;
+    right: -20px;
+}
+
+.navigation_mobile_sub li {
+    flex-basis: 100%;
+}
+
+.navigation_mobile_sub li a {
+    width: 100%;
+    text-align: center;
+    color: #236192;
+    padding: 10px 0;
+}
+
+.navigation_mobile_sub li a:hover {
+    background-color: #236192;
+    color: white;
+}
+
+
 @media(max-width: 1080px) {
 
     .main-theme .main-title h1 {
@@ -281,8 +358,19 @@ a {
 }
 
 @media(max-width: 720px) {
+
+    .navigation {
+        display: none !important;
+    }
+
+    .navigation_mobile {
+        display: flex !important;
+    }
+
     .body-container {
         flex-direction: column;
+        justify-content: space-between;
+        margin: 0 auto;
     }
 
     .body-container .logo {
@@ -301,7 +389,21 @@ a {
 
     .body-container .navigation ul {
         height: 100%;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        padding-left: 0;
+        /* align-items: stretch; */
     }
+
+    .body-container .navigation ul li {
+        list-style: none;
+        display: flex;
+        /*deixando os itens centralizados quanto a altura que se tem do topo do elemento */
+        align-items: center;
+    }
+
+    .details-table {
+        font-size: 10px
+    }
+
 
 }
